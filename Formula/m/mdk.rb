@@ -58,7 +58,6 @@ class Mdk < Formula
   end
 
   def install
-    ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1599
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "CFLAGS=-std=gnu2x"
     system "make", "install"
